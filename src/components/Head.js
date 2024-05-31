@@ -2,12 +2,18 @@ import React from 'react'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaUserCircle } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
+import { useDispatch } from 'react-redux';
+import { toggleMenu } from '../utils/appSlice';
 
 const Head = () => {
+  const dispatch = useDispatch()
+  const toggleMenuHandler = () => {
+    dispatch(toggleMenu())
+  }
   return (
     <div className='grid grid-flow-col p-4 shadow-lg'>
       <div className='flex col-span-1'>
-        <RxHamburgerMenu className='h-8'/>
+        <RxHamburgerMenu className='h-8 cursor-pointer' onClick={()=>toggleMenuHandler()}/>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlHMUb8U4VeW2y-RflH7U7Yp0tsx1hJv0PwQ&s" alt='youtube-icon' className='h-8 mx-4'/>
       </div>
       <div className='col-span-10 px-10'>
