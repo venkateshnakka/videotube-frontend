@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import Sidebar from './Sidebar'
 import MainContainer from './MainContainer'
+import { Outlet } from 'react-router-dom'
 
 const Body = () => {
-  const [name, setName] = useState("venky")
   return (
     <div className='flex'>
         <Sidebar />
-        <MainContainer />
+        <Outlet />
     </div>
   )
 }
